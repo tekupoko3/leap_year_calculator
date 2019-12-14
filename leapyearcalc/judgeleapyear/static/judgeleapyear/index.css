@@ -56,6 +56,7 @@ main .mainwrapper .yearform > form > p{
 .inputblock{
   display: inline-block;
   vertical-align: middle;
+  min-width: 273px;
   flex: 0 1 auto;
   color: #E8F0DE;
   font-size: 20px;
