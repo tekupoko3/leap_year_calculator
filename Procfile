@@ -1,3 +1,1 @@
-web: cd ../
-web: gunicorn leapyearcalc.wsgi --log-file -
-web: cd leapyearcalc
+web: cd leapyearcalc; gunicorn leapyearcalc.wsgi --log-file -;cd ../
