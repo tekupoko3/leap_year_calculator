@@ -54,15 +54,23 @@
       <p>紀元前45年〜紀元8年頃のうるう年運用については下記を参考にしました。</p>
       <p><a href="https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%AA%E3%82%A6%E3%82%B9%E6%9A%A6#%E9%81%8B%E7%94%A8" target="_blank">Wikipedia：ユリウス暦</a></p>
       {% if not result is None %}
-        {% ifequal result "ユリウス暦以前" %}
+        {% if result == "ユリウス暦以前" %}
           <div class="result">
             <p>紀元前46年以前には<span>うるう年の概念は<br class="sp-br">ありませんでした。</span></p>
+          </div>
+        {% elif year >= 5000000000 %} 
+          <div class="result">
+            <p>{{ year_text }}年は<span>{{ result }}</span>ですが、<br><span>その頃には地球は<br><a href="https://news.livedoor.com/article/detail/15371910/" target="_blank">太陽に飲み込まれている</a>かもしれません。</span></p>
+          </div>
+        {% elif year >= 1750000000 %} 
+          <div class="result">
+            <p>{{ year_text }}年は<span>{{ result }}</span>ですが、<br><span>その頃には<a href="https://matome.naver.jp/odai/2138299155821433901" target="_blank">地球上に生物がいない</a>かもしれません。</span></p>
           </div>
         {% else %}
           <div class="result">
             <p>{{ year_text }}年は<span>{{ result }}</span>です。</p>
           </div>
-        {% endifequal %}
+        {% endif %}
       {% endif %}
     </div>
   </main>

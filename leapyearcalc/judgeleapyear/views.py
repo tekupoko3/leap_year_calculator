@@ -33,7 +33,7 @@ def calc(request):
       result = "ユリウス暦以前"
     return render(request, 'judgeleapyear/index.html', {
       'result': result,
-      'year': year,
+      'year': test_year.getYear(),
       'year_text': test_year.getStrYear(),
       'error': None,
       })
