@@ -233,10 +233,12 @@ footer p > a{
   
   footer {
     height: 20vh;
+    align-items: start;
   }
   
   
   footer p{
     font-size: 11px;
+    padding-top: 10px;
   }
 }
