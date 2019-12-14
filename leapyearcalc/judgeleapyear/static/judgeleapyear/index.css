@@ -207,6 +207,10 @@ footer p > a{
   
   main .mainwrapper .result{
     display: flex;
+    width: 390px;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
@@ -230,6 +234,14 @@ footer p > a{
     padding: 10px 40px;
     word-wrap:break-word;
   }
+
+  main .mainwrapper .result > p > .longresult{
+    display: inline;
+    padding: 0px;
+    color: #E8F0DE;
+    font-size: 25px;
+  }
+
   
   footer {
     height: 20vh;
