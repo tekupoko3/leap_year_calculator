@@ -1,1 +1,1 @@
-web: gunicorn leapyearcalc.wsgi --log-file -
+web: gunicorn ./leapyearcalc/leapyearcalc.wsgi --log-file -
