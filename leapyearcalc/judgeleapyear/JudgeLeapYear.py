@@ -148,11 +148,11 @@ class JudgeLeapYear(object):
                     return None
                 elif (len(args) == 2) and (args[1] is "exception"): # 例外を返す場合
                     raise LeapYearError
-                else: # オプションを付けない場合（紀元前47年以前はすべて平年扱いとする）
+                else: # オプションを付けない場合（紀元前46年以前はすべて平年扱いとする）
                     return False
-            # ユリウス暦成立の紀元前46年頃から紀元8年頃までの、例外的な閏年運用史実に基づく判定
+            # ユリウス暦成立の紀元前45年頃から紀元8年頃までの、例外的な閏年運用史実に基づく判定
             # 参考：https://ja.wikipedia.org/wiki/ユリウス暦#運用
-            if -44 < self.__year <= -7: # 紀元前45年は平年、紀元前44年は閏年、以後紀元前８年まで3年に１回閏年
+            if -45 < self.__year <= -7: # 紀元前45年は平年、紀元前44年は閏年、以後紀元前８年まで3年に１回閏年
                 if (self.__year + 7) % 3 == 0:
                     return True
                 else:
