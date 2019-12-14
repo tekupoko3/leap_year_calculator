@@ -179,7 +179,7 @@ footer p > a{
   }
   
   main{
-    height: 80vh;
+    height: 70vh;
   }
   
   main .mainwrapper p{
@@ -230,6 +230,11 @@ footer p > a{
     padding: 10px 40px;
     word-wrap:break-word;
   }
+  
+  footer {
+    height: 20vh;
+  }
+  
   
   footer p{
     font-size: 11px;
