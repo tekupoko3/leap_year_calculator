@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 import sys
 from . import JudgeLeapYear as JLY
+from datetime import datetime
 
 # Create your views here.
 
@@ -24,7 +25,7 @@ def calc(request):
   try:
     test_year.setYear(year)
     try:
-      if test_year.isLeapYear("checkBC46","exception"):
+      if test_year.isLeapYear("checkBC45","exception"):
         result = "うるう年"
       else:
         result = "平年"

@@ -3,7 +3,7 @@ import os
 import re
 
 class LeapYearError(Exception):
-    """ 西暦が紀元前47年以前である場合の例外 """
+    """ 西暦が紀元前46年以前である場合の例外 """
     pass
 
 class JudgeLeapYear(object):
@@ -31,11 +31,11 @@ class JudgeLeapYear(object):
 
     str getStrYear()：メンバ変数__str_yearを値を取得する。
 
-    boolean([NoneType]) isLeapYear(["checkBC46"],[returnType])：メンバ変数__yearが閏年であるか否かを判定する。
+    boolean([NoneType]) isLeapYear(["checkBC45"],[returnType])：メンバ変数__yearが閏年であるか否かを判定する。
         <boolean> True ：__yearは閏年である。
         <boolean> False：__yearは平年である。
-        "checkBC46"：（オプション）紀元前47年以前に閏年の概念がなかったことを判断に含める。
-        returnType：（オプション）オプション"checkBC46"が有効な場合、紀元前47年以前である場合はisLeapYearの返り値を平年Falseと区別する。
+        "checkBC45"：（オプション）紀元前46年以前に閏年の概念がなかったことを判断に含める。
+        returnType：（オプション）オプション"checkBC45"が有効な場合、紀元前46年以前である場合はisLeapYearの返り値を平年Falseと区別する。
             "none"：返り値をNoneとする。
                 <NoneType> None：（オプション）__yearの期間においては閏年は未定義。
             "exception"：例外LeapYearErrorを返す。
@@ -130,19 +130,19 @@ class JudgeLeapYear(object):
     def isLeapYear(self, *args):
         # 可変長引数の例外処理
         if len(args) > 2:
-            raise SyntaxError("Too many arguments for isLeapYear(['checkBC46'],[str:returnType]).")
-        elif (len(args) != 0) and (args[0] is not "checkBC46"):
-            raise SyntaxError("Invalid argument args[0] for isLeapYear(['checkBC46'],[str:returnType]).")
+            raise SyntaxError("Too many arguments for isLeapYear(['checkBC45'],[str:returnType]).")
+        elif (len(args) != 0) and (args[0] is not "checkBC45"):
+            raise SyntaxError("Invalid argument args[0] for isLeapYear(['checkBC45'],[str:returnType]).")
         elif (len(args) == 2):
             if not( args[1] is "none" or args[1] is "exception"):
-                raise SyntaxError("Invalid argument args[1] for isLeapYear(['checkBC46'],[str:returnType]).")
+                raise SyntaxError("Invalid argument args[1] for isLeapYear(['checkBC45'],[str:returnType]).")
 
-        # 紀元前46年（負数表示で-45年）にユリウス暦で初めて閏年が採用された為、その年より前は閏年の概念が本来存在しない
+        # 紀元前45年（負数表示で-44年）にユリウス暦で初めて閏年が採用された為、その年より前は閏年の概念が本来存在しない
         # 加えて、紀元前44年〜紀元8年までは例外的な閏年運用がなされていた（３年周期や、閏年を適用しない期間など）
-        # 第１引数が"checkBC46"であれば、上記考慮する
-        if (1 <= len(args) <= 2) and (args[0] is "checkBC46"):
-            # 紀元前47年以前には閏年の概念が存在しなかった
-            if self.__year < -45:
+        # 第１引数が"checkBC45"であれば、上記考慮する
+        if (1 <= len(args) <= 2) and (args[0] is "checkBC45"):
+            # 紀元前46年以前には閏年の概念が存在しなかった
+            if self.__year <= -45:
                 # さらに第２引数が"None"または"exception"であれば、返り値を平年Falseと区別する
                 if (len(args) == 2) and (args[1] is "none"): # 返り値Noneとする場合
                     return None
@@ -152,7 +152,7 @@ class JudgeLeapYear(object):
                     return False
             # ユリウス暦成立の紀元前46年頃から紀元8年頃までの、例外的な閏年運用史実に基づく判定
             # 参考：https://ja.wikipedia.org/wiki/ユリウス暦#運用
-            if -45 <= self.__year <= -7: # 紀元前46年と紀元前45年は平年、紀元前44年は閏年、以後紀元前８年まで3年に１回閏年
+            if -44 < self.__year <= -7: # 紀元前45年は平年、紀元前44年は閏年、以後紀元前８年まで3年に１回閏年
                 if (self.__year + 7) % 3 == 0:
                     return True
                 else:
