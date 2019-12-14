@@ -1,4 +1,5 @@
-         ___        ______     ____ _                 _  ___  
+<!--
+___        ______     ____ _                 _  ___  
         / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
        / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
       / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
@@ -12,4 +13,35 @@ To get started, create some files, play with the terminal,
 or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
 
 Happy coding!
+-->
 # leap_year_calculator
+
+Django-Based leap year calculator.
+
+# JudgeLeapYear.py
+
+core class definition for leap year calculator.
+
+## class JudgeLeapYear(year)
+
+  -year<int or str>: Initial value which is to be judged whether it's leap year or not.
+    If you wont to substitute Type str to year, it must be written with matching regular expr. r'\-[0-9]'.
+
+### Member Arguments
+  -year<int>: value which is to be judged whether it's leap year or not.
+  -str_year<int>: same as 'year' in Type str. (This is automatically corrected whenever year is set.)
+
+### Methods
+  -setYear(year): sets member arguments 'year' which is to be judged whether it's leap year or not.
+    argument 'year' could be both Type int and str.
+    If you wont to substitute Type str to year, it must be written with matching regular expr. r'\-[0-9]'.
+  
+  -isLeapYear(): judge if member arg 'year' is leap year or not in a simple rule based on Gregorian calendar.
+    return: <Boolean>
+  
+  -isLeapYear("checkBC46",returnExpr): detailed judge of leap year, which is based on histrical application of Julian calendar.
+    return: <Boolean>
+    
+    returnExpr: this option decides the way in case of exception.
+      "none": makes return in NoneType (not in Boolean).
+      "exception": raise <Exception> LeapYearError.
