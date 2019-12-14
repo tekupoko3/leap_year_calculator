@@ -1,0 +1,236 @@
+header .navbar{
+  background-color: #0B3661;
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.headertitle a{
+  text-decoration: none;
+}
+
+.headertitle > a > p{
+  color: #E8F0DE;
+  flex: 0 1 auto;
+  display: block;
+  font-size: 40px;
+}
+
+main{
+  width: 100vw;
+  height: 70vh;
+}
+
+main .mainwrapper{
+  background-color: #68B787;
+  width: 100vw;
+  height: 100%;
+  text-align: center;
+  padding: 2px;
+  color: #0B3661;
+  font-size: 13px;
+}
+
+main .mainwrapper .yearform{
+  display: flex;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+main .mainwrapper .yearform > form > p{
+  display: inline;
+  vertical-align: middle;
+  flex: 0 1 auto;
+  color: #E8F0DE;
+  font-size: 20px;
+  padding-top: 2px;
+}
+
+.inputblock{
+  display: inline-block;
+  vertical-align: middle;
+  flex: 0 1 auto;
+  color: #E8F0DE;
+  font-size: 20px;
+  padding-top: 2px;
+}
+
+main .mainwrapper > p{
+  vertical-align: middle;
+  color: #0B3661;
+  font-size: 13px;
+  padding-top: 2px;
+}
+
+main .mainwrapper > p > a{
+  text-decoration: none;
+}
+
+.inputbox{
+  flex: 0 1 auto;
+  width: 130px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  font-size: 16px;
+  color: #333;
+  padding-right: 10px;
+  ime-mode: disabled;
+}
+
+.inputbox::-webkit-input-placeholder {
+  font-size: 14px;
+}
+.inputbox:-moz-placeholder {
+  font-size: 14px;
+}
+.inputbox::-moz-placeholder {
+  font-size: 14px;
+}
+.inputbox:-ms-input-placeholder {
+  font-size: 14px;
+}
+
+.button{
+  flex: 0 1 auto;
+  vertical-align: middle;
+  border: 1px solid #bbb;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.error-text > p{
+  color: #922;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+main .mainwrapper .result{
+  margin-top: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+main .mainwrapper .result > p{
+  color: #E8F0DE;
+  font-size: 30px;
+}
+
+main .mainwrapper .result > p > span{
+  color: #E8F0DE;
+  font-size: 60px;
+}
+
+footer {
+  background-color: #0B3661;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer p{
+  color: #E8F0DE;
+  flex: 0 1 auto;
+  display: block;
+  font-size: 15px;
+}
+
+footer p > a{
+  color: #E8F0DE;
+  flex: 0 1 auto;
+  text-decoration: none;
+}
+
+@media screen and (min-width:780px){
+  .sp-br{
+    display: none;
+  }
+
+}
+
+@media screen and (max-width:780px){
+  header .navbar{
+    height: 10vh;
+  }
+  
+  .headertitle a > p{
+    font-size: 20px;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+  }
+  
+  main{
+    height: 80vh;
+  }
+  
+  main .mainwrapper p{
+    color: #0B3661;
+    font-size: 11px;
+    padding-top: 2px;
+  }
+  
+  .inputblock{
+    display: block;
+    margin: 10px;
+  }
+  
+  main .mainwrapper .error-text > p{
+    color: #922;
+    display: block;
+    width: 400px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  
+  main .mainwrapper .result{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+
+  }
+  
+  main .mainwrapper .result > p{
+    flex: 0 1 auto;
+    color: #E8F0DE;
+    font-size: 20px;
+  }
+
+  
+  main .mainwrapper .result > p > span{
+    flex: 0 1 auto;
+    width: 350px;
+    color: #E8F0DE;
+    font-size: 30px;
+    display: block;
+    padding: 10px 40px;
+    word-wrap:break-word;
+  }
+  
+  footer p{
+    font-size: 11px;
+  }
+}

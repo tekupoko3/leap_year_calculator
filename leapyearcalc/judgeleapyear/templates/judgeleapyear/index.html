@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>うるう年カリキュレータ</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static "judgeleapyear/reset.css" %}" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "judgeleapyear/base.css" %}" type="text/css" />
+  <link rel="stylesheet" href="{% static "judgeleapyear/index.css" %}" type="text/css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="headertitle">
+        <a href="/"><p>うるう年カリキュレータ</p></a>
+      </div>
+    </div>
+    <div class="flash">
+      
+    </div>
+  </header>
+  <main>
+    <div class="mainwrapper">
+      <div class="yearform">
+        <form action="calc" id="yearinput" method="post">
+          {% csrf_token %}
+          <p>その年、うるう年？</p>
+          <div class="inputblock">
+              … 西暦
+            {% if year is None %}
+              <input type="text" name="year" placeholder="' - ' および半角数字" class="inputbox" pattern="-?[0-9]+" title="半角負号' - '（任意）と、連続した半角数字のみで入力して下さい。" required />
+            {% else %}
+              <input type="text" name="year" placeholder="' - ' および半角数字" value='{{ year }}' class="inputbox" pattern="-?[0-9]+" title="半角負号' - '（任意）と、連続した半角数字のみで入力して下さい。" required />
+            {% endif %}
+            年　
+          </div>
+          <input type="submit" value="調べる" class="button">
+        </form>
+      </div>
+      {% if not error is None %}
+      <div class="error-text">
+          <p>{{ error }}</p>
+      </div>
+      {% endif %}
+      <p>値は西暦で、半角数字のみ入力してください。</p>
+      <br>
+      <p>紀元前は下記のように、西暦0年以下、"-"記号を用いて入力できます。</p>
+      <p>（ 例： 西暦 0年 ＝ 紀元前 1年、西暦 -1年 ＝ 紀元前 2年 ）</p>
+      <p>※負数による西暦の記法について…<a href="https://ja.wikipedia.org/wiki/%E7%B4%80%E5%85%83%E5%89%8D#%E5%A4%A9%E6%96%87%E5%AD%A6%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E7%B4%80%E5%85%83%E5%89%8D" target="_blank">Wikipedia：紀元前</a></p>
+      <br>
+      <p>紀元前46年〜紀元8年頃のうるう年運用については下記を参考にしました。</p>
+      <p><a href="https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%AA%E3%82%A6%E3%82%B9%E6%9A%A6#%E9%81%8B%E7%94%A8" target="_blank">Wikipedia：ユリウス暦</a></p>
+      {% if not result is None %}
+        {% ifequal result "ユリウス暦以前" %}
+          <div class="result">
+            <p>紀元前47年以前には<span>うるう年の概念は<br class="sp-br">ありませんでした。</span></p>
+          </div>
+        {% else %}
+          <div class="result">
+            <p>{{ year_text }}年は<span>{{ result }}</span>です。</p>
+          </div>
+        {% endifequal %}
+      {% endif %}
+    </div>
+  </main>
+  <footer>
+    <p>Copyright ©2019 <a href="https://twitter.com/tekupoko3" target="_blank">@tekupoko3</a> All rights reserved.</p>
+  </footer>
+</body>
+</html>
