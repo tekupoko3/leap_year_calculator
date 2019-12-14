@@ -1,3 +1,4 @@
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 import sys
 from . import JudgeLeapYear as JLY
@@ -19,13 +20,7 @@ def calc(request):
   test_year = JLY.JudgeLeapYear()
   year = request.POST.get("year", None)
   if year is None:
-    result = None
-    year_text = None
-    error = None
-    return render(request, 'judgeleapyear/index.html', {
-      'result': result,
-      'year': year,
-      })
+    return HttpResponseRedirect('/')
   try:
     test_year.setYear(year)
     try:
