@@ -79,7 +79,11 @@
       <p>紀元前45年〜紀元8年頃のうるう年運用については下記を参考にしました。</p>
       <p><a href="https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%AA%E3%82%A6%E3%82%B9%E6%9A%A6#%E9%81%8B%E7%94%A8" target="_blank">Wikipedia：ユリウス暦</a></p>
       {% if not result is None %}
-        {% if result == "ユリウス暦以前" %}
+        {% if year < -4600000000 %} 
+          <div class="result">
+            <p>約46億年より前には、<span class="longresult">閏年はおろか<br><a href="https://ja.wikipedia.org/wiki/%E5%A4%AA%E9%99%BD%E7%B3%BB#%E8%B5%B7%E6%BA%90%E3%81%A8%E9%80%B2%E5%8C%96" target="_blank">太陽も地球もなかった</a><br>ようです。</span></p>
+          </div>
+        {% elif result == "ユリウス暦以前" %}
           <div class="result">
             <p>紀元前46年以前には<span>うるう年の概念は<br class="sp-br">ありませんでした。</span></p>
           </div>
