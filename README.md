@@ -28,7 +28,7 @@ Directory: [leap\_year\_calculator/leapyearcalc/judgeleapyear/](https://github.c
 
   - \<int or str\> year: Initial value which is to be judged whether it's leap year or not.  
     If you wont to substitute Type str to year instead of Type int,  
-    it must be written with matching regular expr. r'\-[0-9]'.  
+    it must be written with matching regular expr. r'\-?[0-9]+'.  
     without argument year, this constructs with default member argumants (detailed below).  
 
 ### Member Arguments
@@ -39,18 +39,18 @@ Directory: [leap\_year\_calculator/leapyearcalc/judgeleapyear/](https://github.c
 
 ### Methods
   - \<void\> setYear(year): sets member arguments 'year' which is to be judged whether it's leap year or not.
-    argument 'year' could be both Type int and str.  
-    If you wont to substitute Type str to year, it must be written with matching regular expr. r'\-[0-9]'.
+    The argument 'year' could be both Type int and str.  
+    If you want to substitute Type str to year, it must be written with matching regular expr. r'\-?[0-9]+'.
 
   - \<int\> getYear(): returns Member \_\_year in Type int.
 
   - \<str\> getStrYear(): returns Member \_\_str_year in Type int.  
-    if year expressed in Astronomical year numbering is Before Christ, this corrects the absolute value with prefix "紀元前(means B.C.)" automatically.
+    If year expressed in Astronomical year numbering is Before Christ, this corrects the absolute value with prefix "紀元前(means B.C.)" automatically.
 
   - \<Boolean\> isLeapYear(): judge if member arg 'year' is leap year or not in a simple rule based on Gregorian calendar.
 
   - \<Boolean\> isLeapYear("checkBC45", returnExpr): detailed judge of leap year, which is based on histrical application of Julian calendar.  
-    - returnExpr: this option decides the way in case value \_\_year matches before application of Julian calender( <= -45 ).  
+    - returnExpr: This option decides the way in case value \_\_year matches before application of Julian calender( <= -45 ).  
       "none": makes return in NoneType.  
       "exception": raise \<Exception\> LeapYearError.  
 
