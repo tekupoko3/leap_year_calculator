@@ -36,21 +36,20 @@ core class definition for leap year calculator.
   - \<void\> setYear(year): sets member arguments 'year' which is to be judged whether it's leap year or not.
     argument 'year' could be both Type int and str.
     If you wont to substitute Type str to year, it must be written with matching regular expr. r'\-[0-9]'.
-  
+
   - \<int\> getYear(): returns Member \_\_year in Type int.
-  
-  - \<str\> getStrYear(): returns Member \_\_str_year in Type int. if year expressed in Astronomical year numbering is Before Christ, this corrects the absolute value with prefix "紀元前(means B.C.)" automatically.
-  
+
+  - \<str\> getStrYear(): returns Member \_\_str_year in Type int.  
+    if year expressed in Astronomical year numbering is Before Christ, this corrects the absolute value with prefix "紀元前(means B.C.)" automatically.
+
   - \<void\> setYear(year): sets member arguments 'year' which is to be judged whether it's leap year or not.
-    argument 'year' could be both Type int and str.
+    argument 'year' could be both Type int and str.  
     If you wont to substitute Type str to year, it must be written with matching regular expr. r'\-[0-9]'.
-  
-  - \<boolean\> isLeapYear(): judge if member arg 'year' is leap year or not in a simple rule based on Gregorian calendar.
-    return: \<Boolean\>
-  
-  - \<boolean\> isLeapYear("checkBC46",returnExpr): detailed judge of leap year, which is based on histrical application of Julian calendar.
-    return: \<Boolean\>
-    
+
+  - \<Boolean\> isLeapYear(): judge if member arg 'year' is leap year or not in a simple rule based on Gregorian calendar.
+
+  - \<Boolean\> isLeapYear("checkBC46",returnExpr): detailed judge of leap year, which is based on histrical application of Julian calendar.  
     - returnExpr: this option decides the way in case of exception.
       "none": makes return in NoneType (not in Boolean).
-      "exception": raise <Exception> LeapYearError.
+      "exception": raise \<Exception\> LeapYearError.
+
