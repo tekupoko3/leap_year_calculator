@@ -21,7 +21,8 @@ If you have any comments about this, please feel free to [contact @tekupoko3](ht
 
 # JudgeLeapYear.py
 
-core class definition for leap year calculator.
+core class definition for leap year calculator.  
+Directory: [leap\_year\_calculator/leapyearcalc/judgeleapyear/](https://github.com/tekupoko3/leap_year_calculator/tree/master/leapyearcalc/judgeleapyear)
 
 ## class JudgeLeapYear(year)
 
