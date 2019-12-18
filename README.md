@@ -55,7 +55,7 @@ Directory: [leap\_year\_calculator/leapyearcalc/judgeleapyear/](https://github.c
       "none": makes return in NoneType.  
       "exception": raise \<Exception\> LeapYearError.  
 
-## Test CLI codes (guidanse texts is only written in Japanese)
+## Test CLI codes (guidance texts is only written in Japanese)
 
 There are 2 CLI codes at the same directory with JudgeLeapYear.py.  
   - simple_leap_year_calc.py
