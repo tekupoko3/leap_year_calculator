@@ -55,7 +55,7 @@ Directory: [leap\_year\_calculator/leapyearcalc/judgeleapyear/](https://github.c
       "none": makes return in NoneType.  
       "exception": raise \<Exception\> LeapYearError.  
 
-## Test CLI codes (Only in Japanese)
+## Test CLI codes (guidanse texts is only written in Japanese)
 
 There are 2 CLI codes at the same directory with JudgeLeapYear.py.  
   - simple_leap_year_calc.py
@@ -65,5 +65,5 @@ simple_leap_year_calc.py demonstrates simple judgement of leap year with isLeapY
 leap_year_calc.py tests the function of isLeapYear("checkBC45","exception") optional judgement.  
 
 What you have to do with it is just enter the year in single-byte integer digits (including 0 and negative).  
-If you try number of times after each response, just enter "y" to continue, while enter "n" to exit program.  
+If you want to try number of times after each response, just enter "y" to continue, while enter "n" to exit program.  
 
