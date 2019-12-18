@@ -17,6 +17,7 @@ Happy coding!
 # leap_year_calculator
 
 Django-Based leap year calculator.
+If you have any comments about this, feel free to [contact @tekupoko3](https://twitter.com/tekupoko3){:target="_blank"}.
 
 # JudgeLeapYear.py
 
@@ -24,24 +25,24 @@ core class definition for leap year calculator.
 
 ## class JudgeLeapYear(year)
 
-  -year<int or str>: Initial value which is to be judged whether it's leap year or not.
+  - year<int or str>: Initial value which is to be judged whether it's leap year or not.
     If you wont to substitute Type str to year, it must be written with matching regular expr. r'\-[0-9]'.
 
 ### Member Arguments
-  -year<int>: value which is to be judged whether it's leap year or not.
-  -str_year<int>: same as 'year' in Type str. (This is automatically corrected whenever year is set.)
+  - year<int>: value which is to be judged whether it's leap year or not.
+  - str_year<int>: same as 'year' in Type str. (This is automatically corrected whenever year is set.)
 
 ### Methods
-  -setYear(year): sets member arguments 'year' which is to be judged whether it's leap year or not.
+  - setYear(year): sets member arguments 'year' which is to be judged whether it's leap year or not.
     argument 'year' could be both Type int and str.
     If you wont to substitute Type str to year, it must be written with matching regular expr. r'\-[0-9]'.
   
-  -isLeapYear(): judge if member arg 'year' is leap year or not in a simple rule based on Gregorian calendar.
+  - isLeapYear(): judge if member arg 'year' is leap year or not in a simple rule based on Gregorian calendar.
     return: <Boolean>
   
-  -isLeapYear("checkBC46",returnExpr): detailed judge of leap year, which is based on histrical application of Julian calendar.
+  - isLeapYear("checkBC46",returnExpr): detailed judge of leap year, which is based on histrical application of Julian calendar.
     return: <Boolean>
     
-    returnExpr: this option decides the way in case of exception.
+    - returnExpr: this option decides the way in case of exception.
       "none": makes return in NoneType (not in Boolean).
       "exception": raise <Exception> LeapYearError.
