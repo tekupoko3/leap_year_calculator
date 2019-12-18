@@ -69,7 +69,7 @@ class JudgeLeapYear(object):
             raise SyntaxError("Too many arguments for __init__([int:year]) of <class JudgeLeapYear> object.")
 
 
-    # 閏年判定の対象となる西暦を返す
+    # 閏年判定の対象となる西暦をメンバ変数__yearに設定する。
     def setYear(self, *args):
         if len(args) == 0 or type(args[0]) is str: # 引数のない場合または文字列型引数の場合は入力値の例外処理を適用
             if len(args) == 0: # 引数がなければ標準入力待ち
