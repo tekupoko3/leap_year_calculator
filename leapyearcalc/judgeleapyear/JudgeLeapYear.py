@@ -1,4 +1,8 @@
 # coding: UTF-8
+#
+# Copyright (c) 2019 @tekupoko3 All rights reserved.
+# https://twitter.com/tekupoko3
+
 import os
 import re
 
@@ -67,24 +71,23 @@ class JudgeLeapYear(object):
 
     # 閏年判定の対象となる西暦を返す
     def setYear(self, *args):
-        # 西暦の入力受付
-        if len(args) == 0 or type(args[0]) is str: # 引数のない場合
-            if len(args) == 0:
+        if len(args) == 0 or type(args[0]) is str: # 引数のない場合または文字列型引数の場合は入力値の例外処理を適用
+            if len(args) == 0: # 引数がなければ標準入力待ち
                 str_year = input("西暦を入力してください（単位不要、半角数字、西暦0年=紀元前1年、紀元前2年以前は負数値）：")
-            elif type(args[0]) is str:
+            elif type(args[0]) is str: # 引数が文字列型であれば直接格納
                 str_year = args[0]
             # 入力値の型確認
             # 正規表現のマッチングパターン
-            pattern_noinput = re.compile(r'^$')
-            pattern_multibyteDigit = re.compile(r'^.*[０-９]+．?[０-９]*.*$')
-            pattern_notDigit = re.compile(r'^.*[^\-0-9\.].*$')
-            pattern_integer = re.compile(r'^\-?[0-9]+$')
-            # 入力された文字との比較
+            pattern_noinput = re.compile(r'^$') # 無入力のパターン
+            pattern_multibyteDigit = re.compile(r'^.*[０-９]+[．\.]?[０-９]*.*$') # 全角数字のパターン（小数含む）
+            pattern_notDigit = re.compile(r'^.*[^\-0-9\.].*$') # 「半角数字とハイフン、小数点」の否定＝数字でない入力
+            pattern_integer = re.compile(r'^\-?[0-9]+$') # 半角数字とハイフン（\.は含んでいないため、これに当てはまらなければ小数）
+            # 入力された文字との比較（Booleanを返す）
             matchNoInput = pattern_noinput.match(str_year)
             matchMultibyteDigit = pattern_multibyteDigit.match(str_year)
             matchNotDigit = pattern_notDigit.match(str_year)
             matchInteger = pattern_integer.match(str_year)
-            # 半角整数以外の入力に対する例外処理
+            # 半角整数以外の入力に対する例外処理群
             if matchNoInput:
                 # 無入力に対する例外処理
                 raise ValueError("エラー（無入力）：値を入力してください")
@@ -100,21 +103,22 @@ class JudgeLeapYear(object):
             # 入力をメンバ変数に反映
             self.__year = int(str_year)
             self.__setStrYear()
-        elif len(args) == 1 and not type(args[0]) is str:
-            if (type(args[0]) is int): # 西暦を直接引数に取る場合
+        elif len(args) == 1 and not type(args[0]) is str: #第一引数が文字列型でない場合
+            if (type(args[0]) is int): # 西暦をint型で引数に取る場合
                 self.__year = args[0]
                 self.__setStrYear()
-            else:
+            else: # 第一引数が文字列型でもint型でもなければ、例外処理
                 raise TypeError("Invalid input type args[0] for __init__([int:year]) in <class JudgeLeapYear> object.")
-        else:
+        else: # 引数が2個以上の場合はエラー
             raise SyntaxError("Too many arguments for getYearInput([int:year]).")
 
-
-    def __setStrYear(self): #西暦0以下の場合に出力年数の表示を紀元前にする
-        if self.__year <= 0:
+    # メンバ変数__str_yearを設定するプライベートメソッド
+    # （西暦自体はsetYearから入力できるので、こちらはプライベート。setYearやコンストラクタから呼び出している）
+    def __setStrYear(self):
+        if self.__year <= 0: # 西暦0以下の場合に出力年数の表示を紀元前にする
             yearBC = abs(self.__year) + 1
             self.__str_year = "紀元前" + str(yearBC)
-        else:
+        else: # それ以外は__yearをそのまま文字列化
             self.__str_year = str(self.__year)
 
 
