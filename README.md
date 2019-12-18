@@ -29,7 +29,7 @@ Directory: [leap\_year\_calculator/leapyearcalc/judgeleapyear/](https://github.c
   - \<int or str\> year: Initial value which is to be judged whether it's leap year or not.  
     If you wont to substitute Type str to year instead of Type int,  
     it must be written with matching regular expr. r'\-?[0-9]+'.  
-    without argument year, this constructs with default member argumants (detailed below).  
+    Calling without argument year, this constructs with default member argumants (detailed below).  
 
 ### Member Arguments
   - \<int\> \_\_year: Type int value which is to be judged whether it's leap year or not.  
