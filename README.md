@@ -45,9 +45,8 @@ Directory: [leap\_year\_calculator/leapyearcalc/judgeleapyear/](https://github.c
   - \<int\> getYear(): returns Member \_\_year in Type int.
 
   - \<str\> \_\_getStrYear(): returns Member \_\_str_year in Type int.  
-    !! YOU CAN'T USE AND THERE IS NO NEED USE THIS AS IS PRIVATE METHODS WHICH IS ALWAYS CALLED BY getYear().  
     If year (expressed in Astronomical year numbering) is Before Christ,  
-    this corrects the absolute value with prefix "紀元前(means B.C.)" automatically.
+    this returns the absolute value with prefix "紀元前(means B.C.)" automatically.
 
   - \<Boolean\> isLeapYear(): judge if member arg 'year' is leap year or not in a simple rule based on Gregorian calendar.
 
