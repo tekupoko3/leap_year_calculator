@@ -34,18 +34,19 @@ Directory: [leap\_year\_calculator/leapyearcalc/judgeleapyear/](https://github.c
 ### Member Arguments
   - \<int\> \_\_year: Type int value which is to be judged whether it's leap year or not.  
     default: Nonetype  
-  - \<str\> \_\_str_year: same as 'year' in Type str. (This is automatically corrected whenever year is set.)
+  - \<str\> \_\_str_year: same as 'year' in Type str. (This is automatically corrected whenever year is set.)  
     default: Nonetype  
 
 ### Methods
-  - \<void\> setYear(year): sets member arguments 'year' which is to be judged whether it's leap year or not.
+  - \<void\> setYear(year): sets member arguments 'year' which is to be judged whether it's leap year or not.  
     The argument 'year' could be both Type int and str.  
     If you want to substitute Type str to year, it must be written with matching regular expr. r'\-?[0-9]+'.
 
   - \<int\> getYear(): returns Member \_\_year in Type int.
 
   - \<str\> getStrYear(): returns Member \_\_str_year in Type int.  
-    If year expressed in Astronomical year numbering is Before Christ, this corrects the absolute value with prefix "紀元前(means B.C.)" automatically.
+    If year expressed in Astronomical year numbering is Before Christ,  
+    this corrects the absolute value with prefix "紀元前(means B.C.)" automatically.
 
   - \<Boolean\> isLeapYear(): judge if member arg 'year' is leap year or not in a simple rule based on Gregorian calendar.
 
