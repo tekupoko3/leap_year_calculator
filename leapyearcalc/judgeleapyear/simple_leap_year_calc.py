@@ -1,4 +1,6 @@
 # coding: UTF-8
+# JudgeLeapYearクラスの動作確認用CLIプログラムその１
+# シンプルな閏年判定用プログラム。
 import os
 
 import JudgeLeapYear as JLP
@@ -7,7 +9,7 @@ import JudgeLeapYear as JLP
 # メインルーチン
 def main():
     print("==========閏年判定プログラム==========")
-    test_year = JLP.JudgeLeapYear()
+    test_year = JLP.JudgeLeapYear() # インスタンス生成
     while True:
         while True:
             try:

@@ -1,5 +1,6 @@
 # coding: UTF-8
-# オプション付きの閏年判定ルーチン
+# JudgeLeapYearクラスの動作確認用CLIプログラムその２
+# isLeapYear()メソッドをオプション付きで閏年判定するルーチン
 # 閏年運用開始以前は例外、紀元前後の特殊運用も史実に基づいて判定。
 import os
 
@@ -9,7 +10,7 @@ import JudgeLeapYear as JLP
 # メインルーチン
 def main():
     print("==========閏年判定プログラム（詳細）==========")
-    test_year = JLP.JudgeLeapYear()
+    test_year = JLP.JudgeLeapYear() # インスタンス生成
     while True:
         while True:
             try:
