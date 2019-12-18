@@ -25,12 +25,15 @@ core class definition for leap year calculator.
 
 ## class JudgeLeapYear(year)
 
-  - \<int or str\> year: Initial value which is to be judged whether it's leap year or not.
-    If you wont to substitute Type str to year, it must be written with matching regular expr. r'\-[0-9]'.
+  - \<int or str\> year: Initial value which is to be judged whether it's leap year or not.  
+    If you wont to substitute Type str to year, it must be written with matching regular expr. r'\-[0-9]'.  
+    without argument year, this constructs with default member argumants (detailed below).  
 
 ### Member Arguments
-  - \<int\> \_\_year: Type int value which is to be judged whether it's leap year or not.
+  - \<int\> \_\_year: Type int value which is to be judged whether it's leap year or not.  
+    default: Nonetype  
   - \<str\> \_\_str_year: same as 'year' in Type str. (This is automatically corrected whenever year is set.)
+    default: Nonetype  
 
 ### Methods
   - \<void\> setYear(year): sets member arguments 'year' which is to be judged whether it's leap year or not.
