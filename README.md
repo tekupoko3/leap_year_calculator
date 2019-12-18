@@ -49,7 +49,7 @@ core class definition for leap year calculator.
   - \<Boolean\> isLeapYear(): judge if member arg 'year' is leap year or not in a simple rule based on Gregorian calendar.
 
   - \<Boolean\> isLeapYear("checkBC46",returnExpr): detailed judge of leap year, which is based on histrical application of Julian calendar.  
-    - returnExpr: this option decides the way in case of exception.
-      "none": makes return in NoneType (not in Boolean).
-      "exception": raise \<Exception\> LeapYearError.
+    - returnExpr: this option decides the way in case of exception.  
+      "none": makes return in NoneType (not in Boolean).  
+      "exception": raise \<Exception\> LeapYearError.  
 
