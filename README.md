@@ -26,7 +26,8 @@ core class definition for leap year calculator.
 ## class JudgeLeapYear(year)
 
   - \<int or str\> year: Initial value which is to be judged whether it's leap year or not.  
-    If you wont to substitute Type str to year, it must be written with matching regular expr. r'\-[0-9]'.  
+    If you wont to substitute Type str to year instead of Type int,  
+    it must be written with matching regular expr. r'\-[0-9]'.  
     without argument year, this constructs with default member argumants (detailed below).  
 
 ### Member Arguments
