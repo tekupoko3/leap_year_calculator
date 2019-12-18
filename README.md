@@ -34,17 +34,13 @@ core class definition for leap year calculator.
 
 ### Methods
   - \<void\> setYear(year): sets member arguments 'year' which is to be judged whether it's leap year or not.
-    argument 'year' could be both Type int and str.
+    argument 'year' could be both Type int and str.  
     If you wont to substitute Type str to year, it must be written with matching regular expr. r'\-[0-9]'.
 
   - \<int\> getYear(): returns Member \_\_year in Type int.
 
   - \<str\> getStrYear(): returns Member \_\_str_year in Type int.  
     if year expressed in Astronomical year numbering is Before Christ, this corrects the absolute value with prefix "紀元前(means B.C.)" automatically.
-
-  - \<void\> setYear(year): sets member arguments 'year' which is to be judged whether it's leap year or not.
-    argument 'year' could be both Type int and str.  
-    If you wont to substitute Type str to year, it must be written with matching regular expr. r'\-[0-9]'.
 
   - \<Boolean\> isLeapYear(): judge if member arg 'year' is leap year or not in a simple rule based on Gregorian calendar.
 
