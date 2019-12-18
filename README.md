@@ -17,7 +17,7 @@ Happy coding!
 # leap_year_calculator
 
 Django-Based leap year calculator.
-If you have any comments about this, feel free to [contact @tekupoko3](https://twitter.com/tekupoko3){:target="_blank"}.
+If you have any comments about this, feel free to [contact @tekupoko3](https://twitter.com/tekupoko3).
 
 # JudgeLeapYear.py
 
