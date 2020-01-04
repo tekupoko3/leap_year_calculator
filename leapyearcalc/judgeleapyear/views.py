@@ -38,6 +38,7 @@ def calc(request):
       'year': test_year.getYear(),
       'year_text': test_year.getStrYear(),
       'error': None,
+      'copyright': copyright,
       })
   except Exception as err:
     tb = sys.exc_info()[2]
