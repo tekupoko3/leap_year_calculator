@@ -6,6 +6,7 @@ from datetime import datetime
 
 # Create your views here.
 copyright = str(datetime.now().year)
+startyear = '2019'
 
 def index(request):
   year = None
@@ -16,6 +17,7 @@ def index(request):
     'result': result,
     'year': year,
     'copyright': copyright,
+    'startyear': startyear,
     })
   
   
@@ -39,6 +41,7 @@ def calc(request):
       'year_text': test_year.getStrYear(),
       'error': None,
       'copyright': copyright,
+      'startyear': startyear,
       })
   except Exception as err:
     tb = sys.exc_info()[2]
@@ -48,6 +51,7 @@ def calc(request):
       'year_text': None,
       'error': "{0}".format(err.with_traceback(tb)),
       'copyright': copyright,
+      'startyear': startyear,
       })
 
 

@@ -104,7 +104,11 @@
     </div>
   </main>
   <footer>
-    <p>Copyright ©2019-{{ copyright }} <a href="https://twitter.com/tekupoko3" target="_blank">@tekupoko3</a> All rights reserved.</p>
+    {% if startyear == copyright %}
+      <p>Copyright ©{{ startyear }} <a href="https://twitter.com/tekupoko3" target="_blank">@tekupoko3</a> All rights reserved.</p>
+    {% else %}
+      <p>Copyright ©{{ startyear }}-{{ copyright }} <a href="https://twitter.com/tekupoko3" target="_blank">@tekupoko3</a> All rights reserved.</p>
+    {% endif %}
   </footer>
 </body>
 </html>
