@@ -5,6 +5,7 @@ from . import JudgeLeapYear as JLY
 from datetime import datetime
 
 # Create your views here.
+copyright = str(datetime.now().year)
 
 def index(request):
   year = None
@@ -14,6 +15,7 @@ def index(request):
   return render(request, 'judgeleapyear/index.html', {
     'result': result,
     'year': year,
+    'copyright': copyright,
     })
   
   
@@ -44,6 +46,7 @@ def calc(request):
       'year': year,
       'year_text': None,
       'error': "{0}".format(err.with_traceback(tb)),
+      'copyright': copyright,
       })
 
 
